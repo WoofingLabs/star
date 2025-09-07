@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STAR - The Hottest Meme Coin on X Layer</title>
+    <link rel="icon" type="image/x-icon" href="https://woofswap.finance/image/tokens/star.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        body {
+            background: #0a0a0a;
+            color: #e0e0e0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1a1a2e, #0f0f1f);
+            text-align: center;
+            padding: 5rem 1rem;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 2px solid #00ff88;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.1"%3E%3Ctext x="10" y="20" fill="%2300ff88" font-size="10" font-family="monospace"%3E101010%3C/text%3E%3Ctext x="30" y="40" fill="%2300ff88" font-size="10" font-family="monospace"%3E110011%3C/text%3E%3Ctext x="50" y="60" fill="%2300ff88" font-size="10" font-family="monospace"%3E010101%3C/text%3E%3Ctext x="70" y="80" fill="%2300ff88" font-size="10" font-family="monospace"%3E001100%3C/text%3E%3C/svg%3E');
+            z-index: 1;
+        }
+
+        header img {
+            width: 200px;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 0 10px #00ff88);
+            z-index: 2;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #00ff88;
+            text-shadow: 0 0 15px #00ff88;
+            z-index: 2;
+            position: relative;
+        }
+
+        header p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto;
+            color: #b0b0b0;
+            z-index: 2;
+            position: relative;
+        }
+
+        nav {
+            background: #121212;
+            padding: 1rem;
+            text-align: center;
+            border-bottom: 1px solid #00ff88;
+        }
+
+        nav a {
+            color: #e0e0e0;
+            text-decoration: none;
+            margin: 0 2rem;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #00ff88;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        .section h2 {
+            color: #00ff88;
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0 10px #00ff88;
+        }
+
+        .section p {
+            max-width: 900px;
+            margin: 0 auto 1.5rem;
+            font-size: 1.1rem;
+            color: #b0b0b0;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            justify-items: center;
+        }
+
+        .feature-card {
+            background: #1a1a2e;
+            border: 1px solid #00ff88;
+            border-radius: 8px;
+            padding: 1.5rem;
+            width: 300px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 15px #00ff88;
+        }
+
+        .feature-card h3 {
+            color: #00ff88;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-card p {
+            color: #e0e0e0;
+            font-size: 1rem;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            justify-items: center;
+            margin-top: 2rem;
+        }
+
+        .gallery img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 2px solid #00ff88;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px #00ff88;
+        }
+
+        .info-box {
+            background: #1a1a2e;
+            border-radius: 8px;
+            padding: 2rem;
+            border: 1px solid #00ff88;
+            max-width: 600px;
+            margin: 2rem auto;
+            text-align: left;
+        }
+
+        .info-box p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            color: #e0e0e0;
+        }
+
+        .info-box a {
+            color: #00ff88;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .info-box a:hover {
+            text-decoration: underline;
+        }
+
+        .contract-container {
+            display: flex;
+            align-items: center;
+            background: #121212;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            border: 1px solid #00ff88;
+            cursor: pointer;
+            transition: box-shadow 0.3s ease;
+            margin-bottom: 1rem;
+        }
+
+        .contract-container:hover {
+            box-shadow: 0 0 10px #00ff88;
+        }
+
+        .contract-address {
+            flex-grow: 1;
+            font-size: 1rem;
+            color: #e0e0e0;
+            word-break: break-all;
+        }
+
+        .copy-button {
+            background: #00ff88;
+            color: #0a0a0a;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .copy-button:hover {
+            background: #00cc66;
+        }
+
+        .copy-button.copied {
+            background: #00cc66;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a img {
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            border: 1px solid #00ff88;
+            transition: transform 0.3s ease;
+        }
+
+        .social-links a img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 10px #00ff88;
+        }
+
+        footer {
+            background: #121212;
+            color: #e0e0e0;
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid #00ff88;
+        }
+
+        footer a {
+            color: #00ff88;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 1.1rem;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+
+            header p {
+                font-size: 1.1rem;
+            }
+
+            nav a {
+                margin: 0 1rem;
+                font-size: 1rem;
+            }
+
+            .feature-card, .gallery img {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .contract-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .copy-button {
+                margin-top: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="image/star_logo.png" alt="STAR Logo">
+        <h1>STAR</h1>
+        <p>The Ultimate Meme Coin Lighting Up X Layer</p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#features">Features</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="container">
+        <div class="section" id="about">
+            <h2>About STAR</h2>
+            <p>STAR is the hottest meme coin on the X Layer blockchain, built for the community and fueled by viral energy. Designed for low fees and lightning-fast transactions, STAR brings the fun of memes to the power of Web3, making it the go-to token for traders and meme enthusiasts alike.</p>
+        </div>
+
+        <div class="section" id="features">
+            <h2>Why STAR Shines</h2>
+            <p>Join the meme coin revolution with STAR’s unique blend of community power and X Layer’s cutting-edge tech.</p>
+            <div class="features">
+                <div class="feature-card">
+                    <h3>Community-Driven</h3>
+                    <p>STAR thrives on its passionate community, driving hype and adoption across the X Layer ecosystem.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Low-Cost Transactions</h3>
+                    <p>Powered by X Layer, STAR offers near-zero fees, making it accessible for all to join the meme frenzy.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Fast and Scalable</h3>
+                    <p>Built on X Layer’s high-speed infrastructure, STAR ensures instant trades and seamless interactions.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="gallery">
+            <h2>Meme Mania Showcase</h2>
+            <p>Catch the vibe of STAR with our collection of meme-inspired visuals.</p>
+            <div class="gallery">
+                <img src="image/star_meme1.png" alt="STAR Meme 1">
+                <img src="image/star_meme2.png" alt="STAR Meme 2">
+                <img src="image/star_meme3.png" alt="STAR Meme 3">
+                <img src="image/star_meme4.jpg" alt="STAR Meme 4">
+            </div>
+        </div>
+
+        <div class="section" id="contact">
+            <h2>Join the STAR Community</h2>
+            <div class="info-box">
+                <div class="contract-container" onclick="copyContractAddress()">
+                    <span class="contract-address">0x552473D6B6b72092aaecd8c4290b91a4Db89e7f6</span>
+                    <button class="copy-button" id="copyButton">Copy</button>
+                </div>
+                <p><strong>Partners:</strong> <a href="https://x.com/WoofingJace" target="_blank">https://x.com/WoofingJace</a></p>
+                <div class="social-links">
+                    <a href="https://x.com/starXlayer" target="_blank">
+                        <img src="image/twitter.png" alt="Twitter Icon">
+                    </a>
+                    <a href="https://t.me/starXlayer" target="_blank">
+                        <img src="image/telegram.png" alt="Telegram Icon">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 STAR. All Rights Reserved.</p>
+        <p>
+            <a href="https://woofingjace.com/" target="_blank">Partners</a> |
+            <a href="https://x.com/starXlayer" target="_blank">Twitter</a> |
+            <a href="https://t.me/starXlayer" target="_blank">Telegram</a>
+        </p>
+    </footer>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <script>
+        function copyContractAddress() {
+            const contractAddress = "0x1234567890abcdef1234567890abcdef12345678";
+            navigator.clipboard.writeText(contractAddress).then(() => {
+                const copyButton = document.getElementById("copyButton");
+                copyButton.textContent = "Copied!";
+                copyButton.classList.add("copied");
+                setTimeout(() => {
+                    copyButton.textContent = "Copy";
+                    copyButton.classList.remove("copied");
+                }, 2000);
+            }).catch(err => {
+                console.error("Failed to copy: ", err);
+            });
+        }
+    </script>
+</body>
+</html>
